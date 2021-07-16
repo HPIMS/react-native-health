@@ -1,80 +1,18 @@
 /**
+ * Apple Health Permissions Availability
+ * A map of human-readable permission strings to their supported OS versions.
+ * 
+ * @type {Object}
+ */
+export const PermissionAvailability = {
+  // PermissionKey: [min iOS Version, max iOS Version (optional)]
+  Vo2Max: [11.0],
+};
+
+/**
  * Apple Health Permissions
  *
  * @type {Object}
  */
-export const Permissions = {
-  ActiveEnergyBurned: 'ActiveEnergyBurned',
-  AppleExerciseTime: 'AppleExerciseTime',
-  AppleStandTime: 'AppleStandTime',
-  BasalEnergyBurned: 'BasalEnergyBurned',
-  BiologicalSex: 'BiologicalSex',
-  BloodType: 'BloodType',
-  BloodAlcoholContent: 'BloodAlcoholContent',
-  BloodGlucose: 'BloodGlucose',
-  BloodPressureDiastolic: 'BloodPressureDiastolic',
-  BloodPressureSystolic: 'BloodPressureSystolic',
-  BodyFatPercentage: 'BodyFatPercentage',
-  BodyMass: 'BodyMass',
-  BodyMassIndex: 'BodyMassIndex',
-  BodyTemperature: 'BodyTemperature',
-  DateOfBirth: 'DateOfBirth',
-  Biotin: 'Biotin',
-  Caffeine: 'Caffeine',
-  Calcium: 'Calcium',
-  Carbohydrates: 'Carbohydrates',
-  Chloride: 'Chloride',
-  Cholesterol: 'Cholesterol',
-  Copper: 'Copper',
-  EnergyConsumed: 'EnergyConsumed',
-  FatMonounsaturated: 'FatMonounsaturated',
-  FatPolyunsaturated: 'FatPolyunsaturated',
-  FatSaturated: 'FatSaturated',
-  FatTotal: 'FatTotal',
-  Fiber: 'Fiber',
-  Folate: 'Folate',
-  Iodine: 'Iodine',
-  Iron: 'Iron',
-  Magnesium: 'Magnesium',
-  Manganese: 'Manganese',
-  Molybdenum: 'Molybdenum',
-  Niacin: 'Niacin',
-  OxygenSaturation: 'OxygenSaturation',
-  PantothenicAcid: 'PantothenicAcid',
-  Phosphorus: 'Phosphorus',
-  Potassium: 'Potassium',
-  Protein: 'Protein',
-  Riboflavin: 'Riboflavin',
-  Selenium: 'Selenium',
-  Sodium: 'Sodium',
-  Sugar: 'Sugar',
-  Thiamin: 'Thiamin',
-  VitaminA: 'VitaminA',
-  VitaminB12: 'VitaminB12',
-  VitaminB6: 'VitaminB6',
-  VitaminC: 'VitaminC',
-  VitaminD: 'VitaminD',
-  VitaminE: 'VitaminE',
-  VitaminK: 'VitaminK',
-  Zinc: 'Zinc',
-  Water: 'Water',
-  DistanceCycling: 'DistanceCycling',
-  DistanceSwimming: 'DistanceSwimming',
-  DistanceWalkingRunning: 'DistanceWalkingRunning',
-  FlightsClimbed: 'FlightsClimbed',
-  HeartRate: 'HeartRate',
-  RestingHeartRate: 'RestingHeartRate',
-  HeartRateVariability: 'HeartRateVariability',
-  Height: 'Height',
-  LeanBodyMass: 'LeanBodyMass',
-  MindfulSession: 'MindfulSession',
-  NikeFuel: 'NikeFuel',
-  RespiratoryRate: 'RespiratoryRate',
-  SleepAnalysis: 'SleepAnalysis',
-  StepCount: 'StepCount',
-  Steps: 'Steps',
-  Vo2Max: 'Vo2Max',
-  WaistCircumference: 'WaistCircumference',
-  Weight: 'Weight',
-  Workout: 'Workout',
-}
+export const Permissions = Object.keys(PermissionAvailability)
+  .reduce((ret, perm) => ({ ...ret, [perm]: perm }), {});
